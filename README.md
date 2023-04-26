@@ -1,6 +1,6 @@
 # EECS Tools  
 
-A collection of handy functions for introductory ECE/EECS courses. These functions are designed to assist students to quickly calculate what they want during exams. To maximize simplicity, every function is independent from one another. 
+A collection of handy functions for introductory ECE/EECS courses. These functions are designed to assist students to quickly calculate what they want during exams. To maximize simplicity, there is no structured OOP practices here, simply functions.  
 
 ## Usage  
 
@@ -8,7 +8,7 @@ To-do: add notebook integration and tutorial
 
 ## Coverage  
   
-Functions are organized in directories, with their respective coverage shown below:  
+Functions are organized in files, with their respective coverage shown below:  
 - `SteadyDC`: Steady-state DC circuits 
 - `SteadyAC`: Steady-state AC circuits 
 - `Dynamic`: RC/RL/RLC circuits 
@@ -26,7 +26,7 @@ Functions are organized in directories, with their respective coverage shown bel
 
 [MIT License](https://mit-license.org/): 
 
-Copyright © 2023 Neil Ze-Ting Lu
+Copyright © 2023 Ze-Ting Lu 呂澤霆
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
