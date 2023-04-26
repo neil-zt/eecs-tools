@@ -1,5 +1,5 @@
 def detect_verbose(function):
-    def wrapper(verbose=True, *args, **kwargs):
+    def wrapper(*args, verbose=True, **kwargs):
         output = function(*args, **kwargs)
         if verbose:
             print(output)
