@@ -24,7 +24,16 @@ def R(V: float=None, I: float=None, P: float=None) -> float:
     if I is not None and P is not None: 
         return P / (I ** 2)
     return None
+
+
+@detect_verbose
+def G(V: float=None, I:float=None, P:float=None) -> float:
+    """
+    Compute the conductance, given any two of voltage, current, and power
+    """
+    return 1 / R(V=V, I=I, P=P)
     
+
 @detect_verbose
 def V(R: float=None, I: float=None, P: float=None) -> float:
     """
@@ -37,6 +46,7 @@ def V(R: float=None, I: float=None, P: float=None) -> float:
     if I is not None and P is not None: 
         return P / (I ** 2)
     return None
+
 
 @detect_verbose
 def I(R: float=None, V: float=None, P: float=None) -> float:
@@ -51,6 +61,7 @@ def I(R: float=None, V: float=None, P: float=None) -> float:
         return math.sqrt(P / R)
     return None
 
+
 @detect_verbose
 def P(R: float=None, V: float=None, I: float=None) -> float:
     """
@@ -64,6 +75,20 @@ def P(R: float=None, V: float=None, I: float=None) -> float:
         return I ** 2 * R
     return None
 
+
+@detect_verbose
+def C(V=1, Q=0):
+    """
+    Compute the capacitance of a linear capacitor, given the voltage and charge
+    """
+    return Q / V
+
+
+@detect_verbose
+def Q():
+    pass
+
+
 @detect_verbose
 def parallel(resistances: list[float]) -> float:
     """
@@ -74,9 +99,11 @@ def parallel(resistances: list[float]) -> float:
         inv_sum += 1 / resistance
     return 1 / inv_sum
 
+
 @detect_verbose
 def series(resistances: list[float]) -> float:
     """
     Compute the equivalence resistance of a series circuit, given the resistance values
     """
     return sum(resistances)
+
