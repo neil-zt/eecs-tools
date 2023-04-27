@@ -1,5 +1,6 @@
 import math
-from Util import detect_verbose
+from Util import detect_verbose, inv_sum_inv
+
 
 class DC_Cheat:
 
@@ -31,7 +32,7 @@ def G(v: float=None, i:float=None, p:float=None) -> float:
     """
     Compute the conductance, given any two of voltage, current, and power
     """
-    return 1 / r(v=v, i=i, p=p)
+    return 1 / R(v=v, i=i, p=p)
     
 
 @detect_verbose
@@ -116,34 +117,54 @@ def E(
     p: float=None,
     r: float=None, 
     t: float=None, 
+    l: float=None,
     ) -> float:
     """
     Compute the energy, given the parameters 
     """
     if c is not None and v is not None: 
         return 0.5 * c * v ** 2
+    if l is not None and i is not None: 
+        return 0.5 * l * i ** 2
     if p is not None and t is not None: 
         return p * t
     if t is not None: 
-        return t * p
+        return t * P(r=r, v=v, i=i)
     return None
 
 
 @detect_verbose
-def parallel(resistances: list[float]) -> float:
+def parallel(
+    rs: list[float]=None,
+    cs: list[float]=None,
+    ls: list[float]=None,
+    ) -> float:
     """
-    Compute the equivalence resistance of a parallel circuit, given the resistance values
+    Compute the equivalent resistance, capacitance, or inductance in parallel
     """
-    inv_sum: float = 0
-    for resistance in resistances:
-        inv_sum += 1 / resistance
-    return 1 / inv_sum
+    if rs is not None:
+        return inv_sum_inv(rs)
+    if cs is not None: 
+        return sum(cs)
+    if ls is not None:
+        return inv_sum_inv(ls)
+    return None
 
 
 @detect_verbose
-def series(resistances: list[float]) -> float:
+def series(
+    rs: list[float]=None,
+    cs: list[float]=None,
+    ls: list[float]=None,
+    ) -> float:
     """
-    Compute the equivalence resistance of a series circuit, given the resistance values
+    Compute the equivalent resistance, capacitance, or inductance in series 
     """
-    return sum(resistances)
+    if rs is not None:
+        return sum(rs)
+    if cs is not None:
+        return inv_sum_inv(cs)
+    if ls is not None: 
+        return sum(ls)
+    return None
 

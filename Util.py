@@ -7,3 +7,9 @@ def detect_verbose(function):
             print(output)
         return output
     return wrapper
+
+def inv_sum_inv(values: list[float]=None) -> float:
+    inv_sum: float = 0
+    for value in values:
+        inv_sum += 1 / value
+    return 1 / inv_sum
