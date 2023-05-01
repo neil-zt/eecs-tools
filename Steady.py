@@ -207,3 +207,19 @@ def pparallel(ps: list[tuple[float]]=None) -> tuple[float]:
         return (0, 0)
     zs = list(map(phasor_to_rectangular, ps))
     return cparallel(zs)
+
+
+@detect_verbose
+def Z(r: float=None, l: float=None, c: float=None, w: float=None) -> tuple[float]:
+    """
+    Compute the impedance of a resistor, an inductor, or a capacitor in an AC circuit
+    """
+    if r is not None:
+        return (r, 0)
+    if l is not None and w is not None:
+        return (0, l * w)
+    if c is not None and w is not None:
+        return (0, - c * w)
+    return None
+
+
