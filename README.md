@@ -11,7 +11,7 @@ After installation, this package is ready to be used, in any Python environment 
 ## Coverage  
   
 Functions are organized in files, with their respective coverage shown below:  
-- `Steady`: Steady-state DC circuits 
+- `Steady`: Steady-state DC/AC circuits 
 - `Dynamic`: RC/RL/RLC circuits 
 - `Digital`: Logic operations and digital circuits 
 - `Util`: Utility functions, mostly math-related  

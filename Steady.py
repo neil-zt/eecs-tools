@@ -2,17 +2,6 @@ import math
 from Util import detect_verbose, inv_sum_inv
 
 
-class DC_Cheat:
-
-    @staticmethod
-    @detect_verbose
-    def basic():
-        return """
-V = IR
-P = IV = (I^2)R = (V^2) / R
-        """
-
-
 @detect_verbose
 def R(v: float=None, i: float=None, p: float=None) -> float:
     """
@@ -167,4 +156,5 @@ def series(
     if ls is not None: 
         return sum(ls)
     return None
+
 
