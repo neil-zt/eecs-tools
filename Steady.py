@@ -1,5 +1,5 @@
 import math
-from Util import detect_verbose, inv_sum_inv
+from Util import detect_verbose, inv_sum_inv, complex_arithmetic, phasor_arithmetic
 
 
 @detect_verbose
@@ -157,4 +157,29 @@ def series(
         return sum(ls)
     return None
 
+
+@detect_verbose
+def cseries(zs: list[tuple[float]]=None) -> tuple[float]:
+    """
+    Compute the equivalent impedance in complex regtangular form of many impedances in series
+    """
+    if not len(zs):
+        return (0, 0)
+    z_sum: tuple[float] = zs[0]
+    for z in zs[1:]:
+        z_sum = complex_arithmetic(z_sum, "+", z)
+    return z_sum
+
+
+@detect_verbose
+def pseries(ps: list[tuple[float]]=None) -> tuple[float]:
+    """
+    Compute the equivalent impedance in phasor form of many impedances in series 
+    """
+    if not len(ps):
+        return (0, 0)
+    p_sum: tuple[float] = ps[0]
+    for p in ps[1:]:
+        p_sum = phasor_arithmetic(p_sum, "+", p)
+    return p_sum
 
