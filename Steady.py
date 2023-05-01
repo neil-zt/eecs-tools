@@ -1,5 +1,5 @@
 import math
-from Util import detect_verbose, inv_sum_inv, complex_arithmetic, phasor_arithmetic
+from Util import detect_verbose, inv_sum_inv, complex_arithmetic, phasor_arithmetic, phasor_to_rectangular
 
 
 @detect_verbose
@@ -163,7 +163,7 @@ def cseries(zs: list[tuple[float]]=None) -> tuple[float]:
     """
     Compute the equivalent impedance in complex regtangular form of many impedances in series
     """
-    if not len(zs):
+    if zs is None or not len(zs):
         return (0, 0)
     z_sum: tuple[float] = zs[0]
     for z in zs[1:]:
@@ -176,10 +176,34 @@ def pseries(ps: list[tuple[float]]=None) -> tuple[float]:
     """
     Compute the equivalent impedance in phasor form of many impedances in series 
     """
-    if not len(ps):
+    if ps is None or not len(ps):
         return (0, 0)
     p_sum: tuple[float] = ps[0]
     for p in ps[1:]:
         p_sum = phasor_arithmetic(p_sum, "+", p)
     return p_sum
 
+
+@detect_verbose
+def cparallel(zs: list[tuple[float]]=None) -> tuple[float]:
+    """
+    Compute the equivalent impedance in complex rectangular form of many impedances in parallel 
+    """
+    if zs is None or not len(zs):
+        return (0, 0)
+    inv_sum: tuple[float] = complex_arithmetic((1, 0), "/", zs[0])
+    for z in zs[1:]:
+        inv_curr = complex_arithmetic((1, 0), "/", z)
+        inv_sum = complex_arithmetic(inv_sum, "+", inv_curr)
+    return complex_arithmetic((1, 0), "/", inv_sum)
+
+
+@detect_verbose
+def pparallel(ps: list[tuple[float]]=None) -> tuple[float]:
+    """
+    Compute the equivalent impedance in phasor form of many impedances in parallel
+    """
+    if ps is None or not len(ps):
+        return (0, 0)
+    zs = list(map(phasor_to_rectangular, ps))
+    return cparallel(zs)
