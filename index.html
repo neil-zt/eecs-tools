@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script src="
+        https://cdn.jsdelivr.net/npm/markdown-it@13.0.1/dist/markdown-it.min.js
+    "></script>
+    <title>EECS-Tools Playground</title>
+    <style>
+        .main{
+            margin: 0 auto;
+            padding: 50px 0;
+            max-width: min(680px, 95vw);
+        }
+        .main > *, py-repl{
+            margin: 20px 0
+        }
+        .hover{
+            padding: 30px 50px 40px 50px;
+            background-color: white;
+            position: sticky;
+            top: 30px;
+            left: 50vw;
+            transform: translateX(calc(-50%));
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            width: calc(100vw - 140px);
+            max-width: 680px;
+            min-width: 300px;
+            box-shadow: 0 0 20px 0 rgba(0,0,0,.07);
+        }
+        .output{
+            background-color: #eee;
+            min-height: 20px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <py-config type="json">
+        {
+            "terminal": false,
+            "fetch": [{
+                "files": [
+                    "./Util.py", 
+                    "./Steady.py", 
+                    "./Digital.py", 
+                    "./Dynamic.py", 
+                    "./__config__.py"
+                ]
+            }]
+        }
+    </py-config>
+    <py-script output="main">
+        from Util import *
+        from Steady import *
+        from Digital import *
+        from Dynamic import *
+    </py-script>
+    
+    <div class="hover" id="hover">
+        <h1>EECS-Tools Playground</h1>
+        <p>
+            All functions have already been imported. 
+        </p>
+        <h3>Input</h3>
+        <div class="py-repl">
+            <py-repl output="output"></py-repl>
+        </div>
+        <h3>Output</h3>
+        <div class="output" id="output">
+    
+        </div>
+    </div>
+
+    <div class="main" id="main">
+        <div id="md-output">
+
+        </div>
+    </div>
+
+    <script async>
+        fetch("./doc.md")
+            .then(res => res.text())
+            .then(content => {
+                var md = window.markdownit();
+                var result = md.render(content);
+                document.getElementById("md-output").innerHTML = result;
+            })
+    </script>
+    
+</body>
+</html>
