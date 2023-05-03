@@ -11,6 +11,10 @@
     "></script>
     <title>EECS-Tools Playground</title>
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
         .main{
             margin: 0 auto;
             padding: 50px 0;
@@ -23,10 +27,13 @@
             padding: 10px 50px 40px 50px;
             background-color: white;
             position: sticky;
-            top: 30px;
+            top: 0;
             transform: translateX(calc(50vw - 50%));
             border-radius: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
             border: 1px solid #ccc;
+            border-top: none;
             width: calc(100vw - 140px);
             max-width: 680px;
             min-width: 300px;
@@ -37,6 +44,7 @@
             min-height: 20px;
             padding: 10px;
             margin-top: 20px;
+            font-family: monospace;
         }
     </style>
 </head>
@@ -64,9 +72,8 @@
     </py-script>
     
     <div class="hover" id="hover">
-        <h1>EECS-Tools Playground</h1>
         <p>
-            All functions, plus <code>math</code> have already been imported. Press <code>Shift</code> + <code>Enter</code> to execute code. 
+            All functions, plus <code>math</code> have already been imported. Press <code>Shift</code> + <code>Enter</code> to execute code. View the source code or contribute to this project <a href="https://github.com/neil-zt/eecs-tools">here</a> 
         </p>
         <h3>Input</h3>
         <div class="py-repl">
