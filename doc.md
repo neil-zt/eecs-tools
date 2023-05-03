@@ -60,7 +60,7 @@ Computes the charge stored on a linear capacitor, given the voltage and capacita
 
 Computes the energy, given the parameters.
 
-### `def parallel(rs: list[float]=None,cs: list[float]=None,ls: list[float]=None,) -> float`
+### `parallel(rs: list[float]=None,cs: list[float]=None,ls: list[float]=None,) -> float`
 
 Computes the equivalent resistance, capacitance, or inductance in parallel.
 
