@@ -6,7 +6,7 @@ A collection of handy functions for introductory ECE/EECS courses. These functio
 
 To-do: pypl installation and stuff
 
-After installation, this package is ready to be used, in any Python environment you like, Jupyter Notebook, for example. For details on how to use the specific functions, check out the [Jupyter Notebook](/guide.ipynb). 
+After installation, this package is ready to be used, in any Python environment you like, Jupyter Notebook, for example. 
 
 ## Coverage  
   
