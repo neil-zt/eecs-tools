@@ -20,7 +20,7 @@
             margin: 20px 0
         }
         .hover{
-            padding: 30px 50px 40px 50px;
+            padding: 10px 50px 40px 50px;
             background-color: white;
             position: sticky;
             top: 30px;
@@ -57,6 +57,7 @@
         }
     </py-config>
     <py-script output="main">
+        import math
         from Util import *
         from Steady import *
         from Digital import *
@@ -66,7 +67,7 @@
     <div class="hover" id="hover">
         <h1>EECS-Tools Playground</h1>
         <p>
-            All functions have already been imported. 
+            All functions, plus <code>math</code> have already been imported. Press <code>Shift</code> + <code>Enter</code> to execute code. 
         </p>
         <h3>Input</h3>
         <div class="py-repl">

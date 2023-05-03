@@ -4,7 +4,7 @@ This documentation lists and explains all the functions implemented in this repo
 
 ---
 
-## `__config__.py` Configuration
+## `__config__.py`
 
 This configuration file contains the following variables that control the program's behavior: 
 
@@ -34,32 +34,55 @@ Computes the resistance, given any two of voltage `v`, current `i`, and power `p
 
 ### `G(v: float=None, i:float=None, p:float=None) -> float`
 
-Computes the conductance, given any two of voltage, current, and power
+Computes the conductance, given any two of voltage, current, and power.
 
 ### `V(r: float=None, i: float=None, p: float=None, c: float=None, q: float=None, l: float=None, di: float=None) -> float:`
 
-Computes the voltage, given the parameters
+Computes the voltage, given the parameters.
 
 ### `I(r: float=None, v: float=None, p: float=None) -> float`
 
-Computes the current, given any two of resistance, voltage, and power
+Computes the current, given any two of resistance, voltage, and power.
 
 ### `P(r: float=None, v: float=None, i: float=None) -> float`
 
-Computes the power, given any two of resistance, voltage, and current
+Computes the power, given any two of resistance, voltage, and current.
 
 ### `C(v: float=None, q: float=None) -> float`
 
-Computes the capacitance of a linear capacitor, given the voltage and charge
+Computes the capacitance of a linear capacitor, given the voltage and charge.
 
 ### `Q(v: float=None, c: float=None) -> float`
 
-Computes the charge stored on a linear capacitor, given the voltage and capacitance
+Computes the charge stored on a linear capacitor, given the voltage and capacitance.
 
 ### `E(c: float=None, v: float=None, i: float=None,p: float=None,r: float=None, t: float=None, l: float=None,) -> float:`
 
-Computes the energy, given the parameters 
+Computes the energy, given the parameters.
 
+### `def parallel(rs: list[float]=None,cs: list[float]=None,ls: list[float]=None,) -> float`
+
+Computes the equivalent resistance, capacitance, or inductance in parallel.
+
+### `series(rs: list[float]=None,cs: list[float]=None,ls: list[float]=None,) -> float`
+
+Computes the equivalent resistance, capacitance, or inductance in series.
+
+### `cseries(zs: list[tuple[float]]=None) -> tuple[float]`
+
+Computes the equivalent impedance in complex regtangular form of many impedances in series.
+
+### `pseries(ps: list[tuple[float]]=None) -> tuple[float]`
+
+Computes the equivalent impedance in phasor form of many impedances in series.
+
+### `cparallel(zs: list[tuple[float]]=None) -> tuple[float]`
+
+Computes the equivalent impedance in complex rectangular form of many impedances in parallel.
+
+### `pparallel(ps: list[tuple[float]]=None) -> tuple[float]`
+
+Computea the equivalent impedance in phasor form of many impedances in parallel.
 
 
 ---
