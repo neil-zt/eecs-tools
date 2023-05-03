@@ -2,6 +2,8 @@
 
 A collection of handy functions for introductory ECE/EECS courses. These functions are designed to assist students to quickly calculate what they want during exams. To maximize simplicity, there is no structured OOP practices here, simply functions.  
 
+[Try it now](https://neil-zt.github.io/eecs-tools/)
+
 ## Coverage  
   
 Functions are organized in files, with their respective coverage shown below:  
@@ -34,6 +36,10 @@ There is a handy pre-built calculator/playground HTML file (`index.html`) inside
 1. Open the directory with VS Code. 
 1. Install the Live Server extension if you have not. 
 1. Run `index.html` with Live Server and access the playground in your browser. 
+
+### Try it install-free 
+
+Try it here without needing to clone/download/install anything: [Try it now](https://neil-zt.github.io/eecs-tools/)
 
 > Attribution: Running Python code directly within your browser is enabled by the developers of [PyScript](https://github.com/pyscript). Follow the link to learn more about their amazing work.  
 
