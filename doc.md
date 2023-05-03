@@ -120,7 +120,7 @@ Performs complex arithmetic of the inputs `complex1` and `complex2`, both in the
 - `*`: Multiplication
 - `/`: Division
 
-### `(phasor1: tuple[float], operator: str, phasor2: tuple[float]) -> tuple[float]`
+### `phasor_arithmetic(phasor1: tuple[float], operator: str, phasor2: tuple[float]) -> tuple[float]`
 
 Performs complex arithmetic of the inputs `phasor1` and `phasor2`, both in the format of `(magnitude, angle)`, where `angle` is in radian, using the operation given by `operator`. `operator` can take the following values: 
 
