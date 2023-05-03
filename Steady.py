@@ -79,7 +79,7 @@ def P(r: float=None, v: float=None, i: float=None) -> float:
 
 
 @detect_verbose
-def C(v: float=None, q: float=None):
+def C(v: float=None, q: float=None) -> float:
     """
     Compute the capacitance of a linear capacitor, given the voltage and charge
     """

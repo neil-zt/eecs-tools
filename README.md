@@ -2,12 +2,6 @@
 
 A collection of handy functions for introductory ECE/EECS courses. These functions are designed to assist students to quickly calculate what they want during exams. To maximize simplicity, there is no structured OOP practices here, simply functions.  
 
-## Usage  
-
-To-do: pypl installation and stuff
-
-After installation, this package is ready to be used, in any Python environment you like, Jupyter Notebook, for example. 
-
 ## Coverage  
   
 Functions are organized in files, with their respective coverage shown below:  
@@ -18,6 +12,30 @@ Functions are organized in files, with their respective coverage shown below:
 
 
 > Attribution: This coverage is originally adapted from the syllabus of Duke University's ECE 110: Fundamentals of Electrical and Computer Engineering. 
+
+## Usage  
+
+Clone this repository onto your machine (or perhaps download it as a zip). Simply import the functions from the files above, and it is ready to be used: 
+
+```python
+from Util import *
+from Steady import *
+from Digital import *
+from Dynamic import *
+```
+
+About what functions there are and how to use them, please follow the [documentation](./doc.md). 
+
+### Running in Browser
+
+There is a handy pre-built calculator/playground HTML file (`index.html`) inside this repository. Follow the steps to use this calculator:
+
+1. Clone (or download) the repository onto your machine.
+1. Open the directory with VS Code. 
+1. Install the Live Server extension if you have not. 
+1. Run `index.html` with Live Server and access the playground in your browser. 
+
+> Attribution: Running Python code directly within your browser is enabled by the developers of [PyScript](https://github.com/pyscript). Follow the link to learn more about their amazing work.  
 
 ## Notices and Contribution
 - This collection is designed to help students do their exams, but should only be used when computers and open-source libraries are permitted. 
