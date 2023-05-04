@@ -133,10 +133,10 @@ def parallel(
     """
     if rs is not None:
         return inv_sum_inv(rs)
-    if cs is not None: 
-        return sum(cs)
-    if ls is not None:
-        return inv_sum_inv(ls)
+    if ls is not None: 
+        return sum(ls)
+    if cs is not None:
+        return inv_sum_inv(cs)
     return None
 
 
@@ -151,10 +151,10 @@ def series(
     """
     if rs is not None:
         return sum(rs)
-    if cs is not None:
-        return inv_sum_inv(cs)
-    if ls is not None: 
-        return sum(ls)
+    if ls is not None:
+        return inv_sum_inv(ls)
+    if cs is not None: 
+        return sum(cs)
     return None
 
 
