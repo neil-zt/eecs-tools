@@ -219,7 +219,7 @@ def Z(r: float=None, l: float=None, c: float=None, w: float=None) -> tuple[float
     if l is not None and w is not None:
         return (0, l * w)
     if c is not None and w is not None:
-        return (0, - c * w)
+        return (0, - 1 / (c * w))
     return None
 
 
